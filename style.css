@@ -111,9 +111,9 @@ body {
 	transition: .2s;
 }
 
-.login__input:active,
-.login__input:focus,
-.login__input:hover {
+.login-input-style:active,
+.login-input-style:focus,
+.login-input-style:hover {
 	outline: none;
 	border-bottom-color: #6A679E;
 }
