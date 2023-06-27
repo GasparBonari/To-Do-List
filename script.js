@@ -59,9 +59,25 @@ btnLogIn.addEventListener("click", function(e)
 
     currentAcount = users.find(e => e.username == usernameInput.value);
 
-    if(currentAcount.username == usernameInput.value && currentAcount.pin == passwordInput.value)
+    if(currentAcount?.username == usernameInput.value && currentAcount?.pin == passwordInput.value)
     {
-        console.log("in")
+        usernameInput.value = "";
+        passwordInput.value = "";
+        passwordInput.blur();
+    }
+    else
+    {
+        usernameInput.value = "";
+        passwordInput.value = "";
+        passwordInput.blur();
+        
+        btnLogIn.classList.add("error");
+        
+        setTimeout(function()
+        {
+            btnLogIn.classList.add("error");
+            btnLogIn.classList.remove("error");
+        }, 300)
     }
 
 })
