@@ -33,7 +33,11 @@ let currentAcount;
 
 const usernameInput = document.querySelector(".username-input");
 const passwordInput = document.querySelector(".password-input");
+const containerLogIn = document.querySelector(".container-log-in");
+const containerApp = document.querySelector(".app");
+
 const btnLogIn = document.querySelector(".log-in-button");
+
 
 
 // CREATE USERNAMES FROM CURRENT USERS
@@ -61,6 +65,10 @@ btnLogIn.addEventListener("click", function(e)
 
     if(currentAcount?.username == usernameInput.value && currentAcount?.pin == passwordInput.value)
     {
+        containerLogIn.style.opacity = 0;
+        containerApp.style.opacity = 100;
+        displayList(currentAcount);
+
         usernameInput.value = "";
         passwordInput.value = "";
         passwordInput.blur();
@@ -81,3 +89,14 @@ btnLogIn.addEventListener("click", function(e)
     }
 
 })
+
+
+// Display List
+
+function displayList(acc)
+{
+    for(let i of acc.list)
+    {
+        console.log(i)
+    }
+}
