@@ -259,7 +259,7 @@ position: relative;
 	font-family: inherit;
 	width: 100%;
 	border: 0;
-	border-bottom: 2px solid #9b9b9b;
+	border-bottom: 2px solid #ffffff;
 	outline: 0;
 	font-size: 1.3rem;
 	color: #fff;
@@ -271,9 +271,10 @@ position: relative;
 	color: transparent;
   }
   .form__field:placeholder-shown ~ .form__label {
-	font-size: 1.3rem;
+	margin-right: 31px;
+	font-size: 1.1rem;
 	cursor: text;
-	top: 20px;
+	top: 40px;
   }
   
   .form__label {
@@ -282,7 +283,7 @@ position: relative;
 	display: block;
 	transition: 0.2s;
 	font-size: 1rem;
-	color: #9b9b9b;
+	color: #ffffff;
   }
   
   .form__field:focus {
@@ -295,6 +296,7 @@ position: relative;
   .form__field:focus ~ .form__label {
 	position: absolute;
 	top: 0;
+	margin-right: 31px;
 	display: block;
 	transition: 0.2s;
 	font-size: 1rem;
