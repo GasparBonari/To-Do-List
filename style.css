@@ -1,3 +1,12 @@
+/*-------Main selectors--------*/
+
+:root {
+	--primary: #11998e;
+	--secondary: #38ef7d;
+	--white: #fff;
+	--gray: #9b9b9b;
+}
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -7,10 +16,14 @@
 }
 
 body {
-	background: linear-gradient(90deg, #C7C5F4, #776BCC);		
+	background: linear-gradient(90deg, #C7C5F4, #776BCC);
+	display: flex;	
 }
 
-.container {
+/*-------Log in--------*/
+
+.container-log-in {
+	opacity: 0;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -168,11 +181,128 @@ body {
 	100% {right: -5px;}
 }
 
+/*-------Table List--------*/
+
 .app{
-    opacity: 0;
+    opacity: 100;
     transition: all 1s;
 }
 
-.hidden{
-	display: none;
+.container-table {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
+
+table {
+	table-layout:auto;
+	width: 600px;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+th,
+td {
+	padding: 15px;
+	background-color: rgba(255,255,255,0.2);
+	color: #fff;
+}
+
+th {
+	text-align: left;
+}
+
+thead > th{
+	background-color: #55608f;
+}
+
+tbody > tr:hover{
+	background-color: rgba(255,255,255,0.3);
+}
+	
+td:hover {
+position: relative;
+	&:hover {
+		&:before {
+			content: "";
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: -9999px;
+			bottom: -9999px;
+			background-color: rgba(255,255,255,0.2);
+			z-index: -1;
+		}
+	}
+}
+
+.change{
+	width: 100px;
+}
+
+
+.form__group {
+	position: relative;
+	padding: 30px 0 0;
+	margin-top: 10px;
+	width: 100%;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+  }
+  
+  .form__field {
+	font-family: inherit;
+	width: 100%;
+	border: 0;
+	border-bottom: 2px solid #9b9b9b;
+	outline: 0;
+	font-size: 1.3rem;
+	color: #fff;
+	padding: 7px 0;
+	background: transparent;
+	transition: border-color 0.2s;
+  }
+  .form__field::placeholder {
+	color: transparent;
+  }
+  .form__field:placeholder-shown ~ .form__label {
+	font-size: 1.3rem;
+	cursor: text;
+	top: 20px;
+  }
+  
+  .form__label {
+	position: absolute;
+	top: 0;
+	display: block;
+	transition: 0.2s;
+	font-size: 1rem;
+	color: #9b9b9b;
+  }
+  
+  .form__field:focus {
+	padding-bottom: 6px;
+	font-weight: 700;
+	border-width: 3px;
+	border-image: linear-gradient(to right, #11998e, #38ef7d);
+	border-image-slice: 1;
+  }
+  .form__field:focus ~ .form__label {
+	position: absolute;
+	top: 0;
+	display: block;
+	transition: 0.2s;
+	font-size: 1rem;
+	color: #11998e;
+	font-weight: 700;
+  }
+  
+  /* reset input */
+  .form__field:required, .form__field:invalid {
+	box-shadow: none;
+  }

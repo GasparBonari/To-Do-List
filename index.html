@@ -14,7 +14,7 @@
     <body>
         <!-- TOP LOG IN -->
         <section id="log-in">
-            <div class="container">
+            <div class="container-log-in">
                 <div class="screen">
                     <div class="screen__content">
                         <form class="login">
@@ -45,7 +45,28 @@
 
         <!-- MAIN APP -->
         <main class="app">
+            
+            <div class="form__group field">
+                <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
+                <label for="name" class="form__label">What do you have planned?</label>
+            </div>
 
+            <div class="container-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>List</th>
+                            <th>Done?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>text</td>
+                            <td class="change"><button>Edit</button><button>Done</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </main>
         
         <!--Script-->
