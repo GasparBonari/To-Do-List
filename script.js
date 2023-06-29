@@ -93,10 +93,21 @@ btnLogIn.addEventListener("click", function(e)
 
 // Display List
 
+let tbody = document.querySelector("tbody");
+
 function displayList(acc)
 {
+    tbody.innerHTML = "";
+
     for(let i of acc.list)
     {
-        console.log(i)
+        let HTML = 
+        `
+        <tr>
+            <td>${i}</td>
+            <td class="list-col"><button>Edit</button><button>Done</button></td>
+        </tr>
+        `
+        tbody.insertAdjacentHTML("afterbegin", HTML);
     }
 }
