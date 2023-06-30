@@ -15,7 +15,8 @@
 }
 
 body {
-	background: linear-gradient(90deg, #C7C5F4, #776BCC);
+	background: linear-gradient(150deg, #06003b, #155504);
+	overflow: hidden;
 }
 
 /*-------Log in--------*/
@@ -273,48 +274,25 @@ body {
 .table {
 	table-layout:auto;
 	width: 600px;
-	border-collapse: collapse;
 	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+	--angle: 0deg;
+	border: 0.5vmin solid;
+	border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+	
+	animation: 3s rotate linear infinite;
 }
 
-  .table:before {
-	content: "";
-	position: absolute;
-	left: -10rem;
-	right: -10rem;
-	top: -10rem;
-	bottom: -10rem;
-	margin: auto;
-	aspect-ratio: 1 / 1;
-	background: conic-gradient(
-	  #fd004c,
-	  #fe9000,
-	  #fff020,
-	  #3edf4b,
-	  #3363ff,
-	  #b102b7,
-	  #fd004c
-	);
-	z-index: -2;
-	pointer-events: none;
-	transition: 35s;
-
-	transform: rotate(5000deg);
-  }
-
-  .table:after {
-	content: "";
-	position: absolute;
-	left: 0.3rem;
-	top: 0.3rem;
-	right: 0.3rem;
-	bottom: 0.3rem;
-	background: black;
-	z-index: -2;
-	pointer-events: none;
+@keyframes rotate {
+	to {
+		--angle: 360deg;
+	}
 }
 
-
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
 
 th,
 td {
@@ -338,7 +316,7 @@ tbody > tr:hover{
 	
 td:hover {
 position: relative;
-color: #2b7246;
+color: #000000;
 	&:hover {
 		&:before {
 			content: "";
