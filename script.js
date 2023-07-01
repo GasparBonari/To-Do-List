@@ -107,10 +107,23 @@ function displayList(acc)
         <tr>
             <td>
                 <div class="list">
-                    <p>${i}</p>
+                    <p class="list-text">${i}</p>
                     <div class="btns-list">
-                        <button>Edit</button>
-                        <button>Done</button>
+                        <button class="button-pushable" role="button">
+                            <span class="button-shadow"></span>
+                            <span class="button-edge"></span>
+                            <span class="button-front text">
+                            Edit
+                            </span>
+                        </button>
+
+                        <button class="button-pushable" role="button">
+                            <span class="button-shadow"></span>
+                            <span class="button-edge"></span>
+                            <span class="button-front text">
+                                Delete
+                            </span>
+                        </button>
                     </div>
                 </div>
             </td>
