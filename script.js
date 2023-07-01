@@ -35,8 +35,11 @@ const usernameInput = document.querySelector(".username-input");
 const passwordInput = document.querySelector(".password-input");
 const containerLogIn = document.querySelector(".container-log-in");
 const containerApp = document.querySelector(".app");
+const newLineList = document.querySelector(".new-line");
+const inputTask = document.querySelector(".form__field");
 
 const btnLogIn = document.querySelector(".log-in-button");
+const btnGo = document.querySelector(".btn-go");
 
 
 
@@ -91,9 +94,7 @@ btnLogIn.addEventListener("click", function(e)
 })
 
 
-// Display List
-
-let newLineList = document.querySelector(".new-line");
+// DISPLAY LIST
 
 function displayList(acc)
 {
@@ -118,3 +119,24 @@ function displayList(acc)
         newLineList.insertAdjacentHTML("afterbegin", HTML);
     }
 }
+
+
+// ADD NEW TASK TO THE LIST
+
+btnGo.addEventListener("click", function(e)
+{
+    e.preventDefault();
+
+    if(inputTask.value != "")
+    {
+        for(let [i, k] of Object.entries(currentAcount))
+        {
+            if(i == "list")
+            {
+                k.push(inputTask.value);
+                
+                displayList(currentAcount);
+            }
+        }
+    }
+})
