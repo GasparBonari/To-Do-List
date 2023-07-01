@@ -260,6 +260,76 @@ body {
 	box-shadow: none;
 }
 
+.btn-go {
+	padding: 0.6em 1.5em;
+	margin-left: 12px;
+	font-weight: 500;
+	font-size: 1.1rem;
+	border: none;
+	outline: none;
+	color: rgb(255, 255, 255);
+	background: #111;
+	cursor: pointer;
+	position: relative;
+	z-index: 0;
+	border-radius: 10px;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+}
+  
+.btn-go:before {
+	content: "";
+	background: linear-gradient(
+	  45deg,
+	  #ff0000,
+	  #ff7300,
+	  #fffb00,
+	  #48ff00,
+	  #00ffd5,
+	  #002bff,
+	  #7a00ff,
+	  #ff00c8,
+	  #ff0000
+	);
+	position: absolute;
+	top: -2px;
+	left: -2px;
+	background-size: 400%;
+	z-index: -1;
+	filter: blur(5px);
+	-webkit-filter: blur(5px);
+	width: calc(100% + 4px);
+	height: calc(100% + 4px);
+	animation: glowing-go 20s linear infinite;
+	transition: opacity 0.3s ease-in-out;
+	border-radius: 10px;
+}
+  
+@keyframes glowing-go {
+	0% {
+	  background-position: 0 0;
+	}
+	50% {
+	  background-position: 400% 0;
+	}
+	100% {
+	  background-position: 0 0;
+	}
+}
+  
+.btn-go:after {
+	z-index: -1;
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: #222;
+	left: 0;
+	top: 0;
+	border-radius: 10px;
+}
+
 /*-------Table List--------*/
 
 .container-table {
@@ -297,6 +367,7 @@ body {
 th,
 td {
 	font-size: 1.3rem;
+	width: 100%;
 	padding: 15px;
 	background-color: rgba(255,255,255,0.2);
 	color: #ffffff;
@@ -332,5 +403,16 @@ color: #000000;
 }
 
 .list-col{
-	width: 100px;
+	display: flex;
+	justify-content: center;
+	margin: 0 0rem;
+}
+
+.list-col button{
+	cursor: pointer;
+	margin: 0 0.5rem;
+	font-size: 1.125rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	transition: 0.4s;
 }

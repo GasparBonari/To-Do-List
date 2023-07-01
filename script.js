@@ -105,7 +105,10 @@ function displayList(acc)
         `
         <tr>
             <td>${i}</td>
-            <td class="list-col"><button>Edit</button><button>Done</button></td>
+            <td class="list-col">
+                <button class="btn1">Edit</button>
+                <button>Done</button>
+            </td>
         </tr>
         `
         tbody.insertAdjacentHTML("afterbegin", HTML);
