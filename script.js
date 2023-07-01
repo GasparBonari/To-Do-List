@@ -93,24 +93,28 @@ btnLogIn.addEventListener("click", function(e)
 
 // Display List
 
-let tbody = document.querySelector("tbody");
+let newLineList = document.querySelector(".new-line");
 
 function displayList(acc)
 {
-    tbody.innerHTML = "";
+    newLineList.innerHTML = "";
 
     for(let i of acc.list)
     {
         let HTML = 
         `
         <tr>
-            <td>${i}</td>
-            <td class="list-col">
-                <button class="btn1">Edit</button>
-                <button>Done</button>
+            <td>
+                <div class="list">
+                    <p>${i}</p>
+                    <div class="btns-list">
+                        <button>Edit</button>
+                        <button>Done</button>
+                    </div>
+                </div>
             </td>
         </tr>
         `
-        tbody.insertAdjacentHTML("afterbegin", HTML);
+        newLineList.insertAdjacentHTML("afterbegin", HTML);
     }
 }
