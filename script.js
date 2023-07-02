@@ -37,10 +37,10 @@ const containerLogIn = document.querySelector(".container-log-in");
 const containerApp = document.querySelector(".app");
 const newLineList = document.querySelector(".new-line");
 const inputTask = document.querySelector(".form__field");
+const list = document.querySelector(".new-line");
 
 const btnLogIn = document.querySelector(".log-in-button");
 const btnGo = document.querySelector(".btn-go");
-const btnDelete = document.querySelector(".btn-delete");
 
 
 
@@ -113,7 +113,7 @@ function displayList(acc)
                         <button class="button-pushable" role="button">
                             <span class="button-shadow"></span>
                             <span class="button-edge"></span>
-                            <span class="button-front text">
+                            <span class="button-front btn-edit">
                             Edit
                             </span>
                         </button>
@@ -121,8 +121,8 @@ function displayList(acc)
                         <button class="button-pushable" role="button">
                             <span class="button-shadow"></span>
                             <span class="button-edge"></span>
-                            <span class="button-front text">
-                                Delete
+                            <span class="button-front btn-delete">
+                            Delete
                             </span>
                         </button>
                     </div>
@@ -163,11 +163,23 @@ btnGo.addEventListener("click", function(e)
 
 // DELETE TASK FROM LIST
 
-let listText = document.querySelector(".list-text");
-
-btnDelete.addEventListener("click", function(e)
+list.addEventListener("click", function(e)
 {
     e.preventDefault();
 
-    console.log(listText)
+    let btnDelete = e.target.closest(".btn-delete");
+    let task = btnDelete.parentElement.parentElement.previousElementSibling.textContent;
+
+    for(let i of currentAcount.list)
+    {
+        if(task == i)
+        {
+            let index = currentAcount.list.indexOf(i);
+            
+            currentAcount.list.splice(index, 1);
+        }
+    }
+
+    displayList(currentAcount);
+
 })
