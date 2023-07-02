@@ -40,6 +40,7 @@ const inputTask = document.querySelector(".form__field");
 
 const btnLogIn = document.querySelector(".log-in-button");
 const btnGo = document.querySelector(".btn-go");
+const btnDelete = document.querySelector(".btn-delete");
 
 
 
@@ -157,4 +158,16 @@ btnGo.addEventListener("click", function(e)
     {
         document.body.style.overflow = "auto";
     }
+})
+
+
+// DELETE TASK FROM LIST
+
+let listText = document.querySelector(".list-text");
+
+btnDelete.addEventListener("click", function(e)
+{
+    e.preventDefault();
+
+    console.log(listText)
 })
