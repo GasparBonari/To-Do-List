@@ -152,4 +152,9 @@ btnGo.addEventListener("click", function(e)
             }
         }
     }
+
+    if(currentAcount.list.length == 7)
+    {
+        document.body.style.overflow = "auto";
+    }
 })
