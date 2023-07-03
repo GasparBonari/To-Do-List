@@ -108,7 +108,7 @@ function displayList(acc)
         <tr>
             <td>
                 <div class="list">
-                    <input type="input" class="text-edit" value="Text" name="text" required />
+                    <input type="input" class="text-edit hidden" value="${i}" name="text" required />
                     <p class="list-text">${i}</p>
                     <div class="btns-list">
                         <button class="button-pushable" role="button">
@@ -187,20 +187,23 @@ list.addEventListener("click", function(e)
 
 // EDIT TASK FROM LIST
 
-const btnEdit = document.querySelector(".btn-edit");
 let inputEdit = document.querySelector(".text-edit");
 let taskListText = document.querySelector(".list-text");
 
 // taskListText.innerHTML = "yo";
 // inputEdit.value = "yo"
 
-btnEdit.addEventListener("click", function(e)
+list.addEventListener("click", function(e)
 {
     e.preventDefault();
+
+    let btnEdit = e.target.closest(".btn-edit");
+    let inputEdit = btnEdit.parentElement.parentElement.previousElementSibling.previousElementSibling;
+    let taskListText = btnEdit.parentElement.parentElement.previousElementSibling;
 
     inputEdit.classList.toggle("hidden");
 
     inputEdit.classList.contains("hidden") ? taskListText.style.opacity = 100 : taskListText.style.opacity = 0;
 
-    taskListText.innerHTML = "dick"; // check this
+    taskListText.innerHTML = inputEdit.value;
 })
