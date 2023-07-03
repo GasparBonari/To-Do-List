@@ -200,10 +200,16 @@ list.addEventListener("click", function(e)
     let btnEdit = e.target.closest(".btn-edit");
     let inputEdit = btnEdit.parentElement.parentElement.previousElementSibling.previousElementSibling;
     let taskListText = btnEdit.parentElement.parentElement.previousElementSibling;
+    let index = currentAcount.list.indexOf(taskListText.textContent);
 
     inputEdit.classList.toggle("hidden");
 
     inputEdit.classList.contains("hidden") ? taskListText.style.opacity = 100 : taskListText.style.opacity = 0;
 
     taskListText.innerHTML = inputEdit.value;
+
+    if(index !== -1)
+    {
+        currentAcount.list[index] = taskListText.textContent;
+    }
 })
