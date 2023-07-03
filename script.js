@@ -108,6 +108,7 @@ function displayList(acc)
         <tr>
             <td>
                 <div class="list">
+                    <input type="input" class="text-edit" value="Text" name="text" required />
                     <p class="list-text">${i}</p>
                     <div class="btns-list">
                         <button class="button-pushable" role="button">
@@ -182,4 +183,20 @@ list.addEventListener("click", function(e)
 
     displayList(currentAcount);
 
+})
+
+// EDIT TASK FROM LIST
+
+const btnEdit = document.querySelector(".btn-edit");
+let inputEdit = document.querySelector(".text-edit");
+let taskListText = document.querySelector(".list-text");
+
+// taskListText.innerHTML = "yo";
+// inputEdit.value = "yo"
+
+btnEdit.addEventListener("click", function(e)
+{
+    e.preventDefault();
+
+    inputEdit.classList.toggle("hidden");
 })
