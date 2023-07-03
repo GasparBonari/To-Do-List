@@ -187,12 +187,6 @@ list.addEventListener("click", function(e)
 
 // EDIT TASK FROM LIST
 
-let inputEdit = document.querySelector(".text-edit");
-let taskListText = document.querySelector(".list-text");
-
-// taskListText.innerHTML = "yo";
-// inputEdit.value = "yo"
-
 list.addEventListener("click", function(e)
 {
     e.preventDefault();
