@@ -199,4 +199,8 @@ btnEdit.addEventListener("click", function(e)
     e.preventDefault();
 
     inputEdit.classList.toggle("hidden");
+
+    inputEdit.classList.contains("hidden") ? taskListText.style.opacity = 100 : taskListText.style.opacity = 0;
+
+    taskListText.innerHTML = "dick"; // check this
 })

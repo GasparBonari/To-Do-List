@@ -521,4 +521,13 @@ td:hover {
 
 .text-edit{
 	position: absolute;
+	bottom: 27px;
+	width: 50%;
+	border: 0;
+	border-bottom: 2px solid #ffffff;
+	outline: 0;
+	font-size: 1.3rem;
+	color: #000000;
+	padding: 0;
+	background: transparent;
 }
