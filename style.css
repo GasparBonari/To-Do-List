@@ -412,6 +412,7 @@ td:hover {
 .list{
     display: flex;
     justify-content: space-between;
+	cursor: pointer;
 }
 
 .list-text{

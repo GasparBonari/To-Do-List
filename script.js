@@ -110,7 +110,7 @@ function displayList(acc)
                 <div class="list">
                     <input type="input" class="text-edit hidden" value="${i}" name="text" required />
                     <p class="list-text">${i}</p>
-                    <div class="btns-list">
+                    <div class="btns-list hidden">
                         <button class="button-pushable" role="button">
                             <span class="button-shadow"></span>
                             <span class="button-edge"></span>
