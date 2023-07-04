@@ -207,3 +207,15 @@ list.addEventListener("click", function(e)
         currentAcount.list[index] = taskListText.textContent;
     }
 })
+
+
+// HIDDEN BUTTONS
+
+list.addEventListener("click", function(e)
+{
+    e.preventDefault();
+
+    let btns = e.target.childNodes[5]
+
+    btns.classList.toggle("hidden")
+})
