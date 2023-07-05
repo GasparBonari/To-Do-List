@@ -38,9 +38,13 @@ const containerApp = document.querySelector(".app");
 const newLineList = document.querySelector(".new-line");
 const inputTask = document.querySelector(".form__field");
 const list = document.querySelector(".new-line");
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
 
 const btnLogIn = document.querySelector(".log-in-button");
 const btnGo = document.querySelector(".btn-go");
+const btnOpenModal = document.querySelector(".btn--open-modal");
+const btnCloseModal = document.querySelector(".btn--close-modal");
 
 
 
@@ -57,6 +61,25 @@ function createUserNames(clients)
 }
 
 createUserNames(users);
+
+
+// OPEN AND CLOSE MODAL
+
+btnOpenModal.addEventListener("click", function(e)
+{
+    e.preventDefault();
+
+    modal.classList.remove("hidden");
+    overlay.classList.remove("hidden");
+})
+
+btnCloseModal.addEventListener("click", function(e)
+{
+    e.preventDefault();
+
+    modal.classList.add("hidden");
+    overlay.classList.add("hidden");
+})
 
 
 // LOG IN
