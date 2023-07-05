@@ -304,6 +304,7 @@ body {
 
 .login__submit:hover {
   background-color: #fff;
+  transform: translate3d(0, 2px, 0);
 }
 
 .login__submit:active {
