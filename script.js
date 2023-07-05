@@ -65,20 +65,28 @@ createUserNames(users);
 
 // OPEN AND CLOSE MODAL
 
-btnOpenModal.addEventListener("click", function(e)
+function openModal()
 {
-    e.preventDefault();
-
     modal.classList.remove("hidden");
     overlay.classList.remove("hidden");
-})
+}
 
-btnCloseModal.addEventListener("click", function(e)
+function closeModal()
 {
-    e.preventDefault();
-
     modal.classList.add("hidden");
     overlay.classList.add("hidden");
+}
+
+btnOpenModal.addEventListener("click", openModal);
+btnCloseModal.addEventListener("click", closeModal);
+overlay.addEventListener("click", closeModal);
+
+document.addEventListener("keydown", function(e)
+{
+    if(e.key == "Escape")
+    {
+        closeModal();
+    }
 })
 
 
