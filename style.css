@@ -154,7 +154,6 @@ body {
 }
 
 .btn--close-modal {
-	font-family: inherit;
 	color: inherit;
 	position: absolute;
 	top: 0.5rem;
@@ -163,6 +162,10 @@ body {
 	cursor: pointer;
 	border: none;
 	background: none;
+}
+
+.btn--close-modal:hover{
+	color: #00000074;
 }
 
 .screen {		
