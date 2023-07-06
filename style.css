@@ -302,21 +302,29 @@ body {
 	touch-action: manipulation;
 }
 
-.login__submit:hover {
+.login__submit:hover,
+.btn-join-us:hover {
   background-color: #fff;
   transform: translate3d(0, 2px, 0);
 }
 
-.login__submit:active {
+.login__submit:active,
+.btn-join-us:active {
   box-shadow: #010042 2px 2px 0 0;
   transform: translate(2px, 2px);
 }
 
-.btn-join {
+.btn-join-us {
+  background: #ebebeb;
+  border: 2px solid #010042;
+  border-radius: 30px;
+  box-shadow: #010042 4px 4px 0 0;
+  color: #4C489D;
   cursor: pointer;
   display: inline-block;
   font-weight: 600;
   font-size: 18px;
+  margin-top: 30px;
   padding: 0 18px;
   line-height: 50px;
   text-align: center;
@@ -325,15 +333,6 @@ body {
   -webkit-user-select: none;
   touch-action: manipulation;
 }
-
-/* .btn-join:hover {
-  background-color: #fff;
-}
-
-.btn-join:active {
-  box-shadow: #422800 2px 2px 0 0;
-  transform: translate(2px, 2px);
-} */
 
 .button__icon {
 	font-size: 24px;
