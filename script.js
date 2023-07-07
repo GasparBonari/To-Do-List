@@ -74,7 +74,7 @@ function openModal()
     overlay.classList.remove("hidden");
 }
 
-function closeModal()
+function closeModals()
 {
     modal.classList.add("hidden");
     overlay.classList.add("hidden");
@@ -82,14 +82,14 @@ function closeModal()
 }
 
 btnOpenModal.addEventListener("click", openModal);
-btnCloseModal.addEventListener("click", closeModal);
-overlay.addEventListener("click", closeModal);
+btnCloseModal.addEventListener("click", closeModals);
+overlay.addEventListener("click", closeModals);
 
 document.addEventListener("keydown", function(e)
 {
     if(e.key == "Escape")
     {
-        closeModal();
+        closeModals();
     }
 })
 
@@ -103,7 +103,7 @@ function openJoinModal()
 }
 
 btnJoinUs.addEventListener("click", openJoinModal);
-btnCloseJoin.addEventListener("click", closeModal);
+btnCloseJoin.addEventListener("click", closeModals);
 
 
 // LOG IN
