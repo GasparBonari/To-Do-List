@@ -98,8 +98,6 @@ btnJoinUs.addEventListener("click", function(e)
 {
     e.preventDefault();
 
-    console.log("hi")
-
     overlay.classList.remove("hidden");
     containerJoinUs.classList.remove("hidden");
 
