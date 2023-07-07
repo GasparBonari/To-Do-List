@@ -41,9 +41,12 @@ const list = document.querySelector(".new-line");
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 const containerJoinUs = document.querySelector(".join-box");
+const joinUsername = document.querySelector(".join-username");
+const joinPassword = document.querySelector(".join-password");
 
 const btnLogIn = document.querySelector(".log-in-button");
-const btnJoinUs = document.querySelector(".btn-join-us");
+const btnJoin = document.querySelector(".btn-join-us");
+const btnSubmit = document.querySelector(".btn-submit");
 const btnGo = document.querySelector(".btn-go");
 const btnOpenModal = document.querySelector(".btn--open-modal");
 const btnCloseModal = document.querySelector(".btn--close-modal");
@@ -96,15 +99,22 @@ document.addEventListener("keydown", function(e)
 
 // CREATE NEW ACCOUNT
 
-function openJoinModal()
+btnJoin.addEventListener("click", function(e)
 {
+    e.preventDefault();
+
     overlay.classList.remove("hidden");
     containerJoinUs.classList.remove("hidden");
-}
+});
 
-btnJoinUs.addEventListener("click", openJoinModal);
 btnCloseJoin.addEventListener("click", closeModals);
 
+btnSubmit.addEventListener("click", function(e)
+{
+    e.preventDefault();
+
+    console.log(joinUsername.value, joinPassword.value)
+})
 
 // LOG IN
 
