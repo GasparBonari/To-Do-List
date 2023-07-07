@@ -47,6 +47,7 @@ const btnJoinUs = document.querySelector(".btn-join-us");
 const btnGo = document.querySelector(".btn-go");
 const btnOpenModal = document.querySelector(".btn--open-modal");
 const btnCloseModal = document.querySelector(".btn--close-modal");
+const btnCloseJoin = document.querySelector(".btn-close");
 
 
 
@@ -77,6 +78,7 @@ function closeModal()
 {
     modal.classList.add("hidden");
     overlay.classList.add("hidden");
+    containerJoinUs.classList.add("hidden");
 }
 
 btnOpenModal.addEventListener("click", openModal);
@@ -94,14 +96,15 @@ document.addEventListener("keydown", function(e)
 
 // CREATE NEW ACCOUNT
 
-btnJoinUs.addEventListener("click", function(e)
+function openJoinModal()
 {
-    e.preventDefault();
-
     overlay.classList.remove("hidden");
     containerJoinUs.classList.remove("hidden");
+}
 
-})
+btnJoinUs.addEventListener("click", openJoinModal);
+btnCloseJoin.addEventListener("click", closeModal);
+
 
 // LOG IN
 
