@@ -113,7 +113,18 @@ btnSubmit.addEventListener("click", function(e)
 {
     e.preventDefault();
 
-    console.log(joinUsername.value, joinPassword.value)
+    if(joinUsername.value == "" || joinPassword.value == "")
+    {
+        btnSubmit.classList.add("error");
+
+        setTimeout(function()
+        {
+            btnSubmit.classList.remove("error");
+        }, 300)
+
+        joinUsername.value = "";
+        joinPassword.value = "";
+    }
 })
 
 // LOG IN
