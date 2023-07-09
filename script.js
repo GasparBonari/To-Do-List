@@ -41,6 +41,8 @@ const list = document.querySelector(".new-line");
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 const containerJoinUs = document.querySelector(".join-box");
+const joinName = document.querySelector(".join-name");
+const joinLastName = document.querySelector(".join-last-name");
 const joinUsername = document.querySelector(".join-username");
 const joinPassword = document.querySelector(".join-password");
 
@@ -124,6 +126,20 @@ btnSubmit.addEventListener("click", function(e)
 
         joinUsername.value = "";
         joinPassword.value = "";
+    }
+    else
+    {
+        let newName = joinName.value;
+        let newLastName = joinLastName.value;
+        let newUsername = joinUsername.value;
+        let newPassword = joinPassword.value;
+
+        let newAccount = {name: newName, lastname: newLastName, pin: Number(newPassword), username: newUsername};
+
+        users.push(newAccount);
+
+        overlay.classList.add("hidden");
+        containerJoinUs.classList.add("hidden");
     }
 })
 
