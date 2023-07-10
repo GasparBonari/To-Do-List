@@ -115,7 +115,7 @@ btnSubmit.addEventListener("click", function(e)
 {
     e.preventDefault();
 
-    if(joinUsername.value == "" || joinPassword.value == "")
+    if(joinUsername.value == "" || joinPassword.value == "" || joinName.value == "" || joinLastName.value == "")
     {
         btnSubmit.classList.add("error");
 
