@@ -134,7 +134,12 @@ btnSubmit.addEventListener("click", function(e)
         let newUsername = joinUsername.value;
         let newPassword = joinPassword.value;
 
-        let newAccount = {name: newName, lastname: newLastName, pin: Number(newPassword), list: [], username: newUsername};
+        // if(typeof newPassword == "string")
+        // {
+        //     return alert("Passworld has to be numbers!");
+        // }
+
+        let newAccount = {name: newName, lastname: newLastName, pin: newPassword, list: [], username: newUsername};
 
         users.push(newAccount);
 
