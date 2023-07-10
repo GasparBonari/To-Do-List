@@ -129,8 +129,6 @@ btnSubmit.addEventListener("click", function(e)
         joinName.value = "";
         joinLastName.value = "";
 
-        alert(`- Complete all the information! 
-- Password only with numbers!`)
     }
     else
     {
