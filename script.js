@@ -126,6 +126,11 @@ btnSubmit.addEventListener("click", function(e)
 
         joinUsername.value = "";
         joinPassword.value = "";
+        joinName.value = "";
+        joinLastName.value = "";
+
+        alert(`- Complete all the information! 
+- Password only with numbers!`)
     }
     else
     {
