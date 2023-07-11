@@ -43,7 +43,7 @@ body {
 	min-height: 100vh;
 
     transition: all 1s;
-	opacity: 100;
+	opacity: 0;
 }
 
 
@@ -545,7 +545,7 @@ input[type=number]::-webkit-outer-spin-button {
 	display: flex;
 	justify-content: center;
 
-	opacity: 0;
+	opacity: 100;
     transition: all 1s;
 }
 
@@ -689,6 +689,43 @@ input[type=number]::-webkit-outer-spin-button {
 
 /*-------TABLE LIST--------*/
 
+.container-category{
+	position: absolute;
+	max-height:200px;
+	top: 40%;
+	left: 10%;
+	transform: translate(-50%, -50%);
+	border-radius: 5px;
+}
+
+.table-category{
+	table-layout:auto;
+	width: 200px;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+	--angle: 0deg;
+	border: 0.5vmin solid;
+	border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+	
+	animation: 3s rotate linear infinite;
+}
+
+.table-category th, 
+.table-category td{
+	background-color: rgba(0, 0, 0, 0.552);
+}
+
+.category-1:hover{
+	color: rgb(255, 0, 0);
+}
+
+.category-2:hover{
+	color: #3c00ff;
+}
+
+.category-3:hover{
+	color: rgb(9, 255, 0);
+}
+
 .container-table {
 	position: absolute;
 	max-height:200px;
@@ -739,7 +776,7 @@ thead > th{
 }
 
 	
-td:hover {
+.new-line td:hover {
 	position: relative;
 	color: #000000;
 }
