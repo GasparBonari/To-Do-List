@@ -306,3 +306,7 @@ list.addEventListener("click", function(e)
 
     btns.classList.toggle("hidden")
 })
+
+
+
+// document.querySelector(".wrap").classList.remove("wrap-active");
