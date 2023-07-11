@@ -308,5 +308,19 @@ list.addEventListener("click", function(e)
 })
 
 
+let categoryContent = document.querySelector(".category-content");
+let wrap = document.querySelectorAll(".wrap");
 
-// document.querySelector(".wrap").classList.remove("wrap-active");
+categoryContent.addEventListener("click", function(e)
+{
+    let btn = e.target.closest(".wrap");
+
+    if(!btn) return;
+
+    for(let i of wrap)
+    {
+        i.classList.remove("wrap-active");
+    }
+
+    btn.classList.add("wrap-active");
+})
