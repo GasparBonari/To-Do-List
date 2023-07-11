@@ -296,7 +296,7 @@ list.addEventListener("click", function(e)
 })
 
 
-// HIDDEN BUTTONS
+// HIDE BUTTONS
 
 list.addEventListener("click", function(e)
 {
@@ -307,6 +307,8 @@ list.addEventListener("click", function(e)
     btns.classList.toggle("hidden")
 })
 
+
+// SELECT BUTTONS FROM CATEGORY LIST
 
 let categoryContent = document.querySelector(".category-content");
 let wrap = document.querySelectorAll(".wrap");
