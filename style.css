@@ -824,7 +824,7 @@ thead > th{
 }
 
 	
-.new-line td:hover {
+.new-task td:hover {
 	position: relative;
 	color: #000000;
 }

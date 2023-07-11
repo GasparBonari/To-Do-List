@@ -35,9 +35,8 @@ const usernameInput = document.querySelector(".username-input");
 const passwordInput = document.querySelector(".password-input");
 const containerLogIn = document.querySelector(".container-log-in");
 const containerApp = document.querySelector(".app");
-const newLineList = document.querySelector(".new-line");
+const newLineList = document.querySelector(".new-task");
 const inputTask = document.querySelector(".form__field");
-const list = document.querySelector(".new-line");
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 const containerJoinUs = document.querySelector(".join-box");
@@ -251,7 +250,7 @@ btnGo.addEventListener("click", function(e)
 
 // DELETE TASK FROM LIST
 
-list.addEventListener("click", function(e)
+newLineList.addEventListener("click", function(e)
 {
     e.preventDefault();
 
@@ -274,7 +273,7 @@ list.addEventListener("click", function(e)
 
 // EDIT TASK FROM LIST
 
-list.addEventListener("click", function(e)
+newLineList.addEventListener("click", function(e)
 {
     e.preventDefault();
 
@@ -298,7 +297,7 @@ list.addEventListener("click", function(e)
 
 // HIDE BUTTONS
 
-list.addEventListener("click", function(e)
+newLineList.addEventListener("click", function(e)
 {
     e.preventDefault();
 
