@@ -7,7 +7,9 @@ let user1 =
     name: "John",
     lastname: "Wick",
     pin: 1111,
-    list: ["Check garden", "Pick up post"],
+    important: ["Check garden", "Pick up post"],
+    work: ["Meeting with new employees"],
+    ideas: ["Buy new shop", "Invest in new keyboards"]
 }
 
 let user2 = 
@@ -15,7 +17,9 @@ let user2 =
     name: "Maria",
     lastname: "Lash",
     pin: 2222,
-    list: [],
+    important: ["New series on netflix"],
+    work: ["Reply new job offer"],
+    ideas: ["Landscape painting", "Add new color to last book"]
 }
 
 let user3 =
@@ -23,7 +27,9 @@ let user3 =
     name: "Jack",
     lastname: "Sparrow",
     pin: 3333,
-    list: ["Meeting with teacher"],
+    important: ["Meeting with teacher"],
+    work: ["Saturday open at 9AM", "Bring new uniform"],
+    ideas: ["Blue shirt for participants"]
 }
 
 // SELECTORS
@@ -157,7 +163,7 @@ btnLogIn.addEventListener("click", function(e)
     {
         containerLogIn.style.opacity = 0;
         containerApp.style.opacity = 100;
-        displayList(currentAcount);
+        displayList(currentAcount, "important");
 
         usernameInput.value = "";
         passwordInput.value = "";
@@ -183,42 +189,84 @@ btnLogIn.addEventListener("click", function(e)
 
 // DISPLAY LIST
 
-function displayList(acc)
+function displayList(acc, category)
 {
     newLineList.innerHTML = "";
 
-    for(let i of acc.list)
+    for(let [i, k] of Object.entries(acc))
     {
-        let HTML = 
-        `
-        <tr>
-            <td>
-                <div class="list">
-                    <input type="input" class="text-edit hidden" value="${i}" name="text" required />
-                    <p class="list-text">${i}</p>
-                    <div class="btns-list hidden">
-                        <button class="button-pushable" role="button">
-                            <span class="button-shadow"></span>
-                            <span class="button-edge"></span>
-                            <span class="button-front btn-edit">
-                            Edit
-                            </span>
-                        </button>
+        if(i == category)
+        {
+            for(let i of k)
+            {
+                let HTML = 
+                `
+                <tr>
+                    <td>
+                        <div class="list">
+                            <input type="input" class="text-edit hidden" value="${i}" name="text" required />
+                            <p class="list-text">${i}</p>
+                            <div class="btns-list hidden">
+                                <button class="button-pushable" role="button">
+                                    <span class="button-shadow"></span>
+                                    <span class="button-edge"></span>
+                                    <span class="button-front btn-edit">
+                                    Edit
+                                    </span>
+                                </button>
 
-                        <button class="button-pushable" role="button">
-                            <span class="button-shadow"></span>
-                            <span class="button-edge"></span>
-                            <span class="button-front btn-delete">
-                            Delete
-                            </span>
-                        </button>
-                    </div>
-                </div>
-            </td>
-        </tr>
-        `
-        newLineList.insertAdjacentHTML("afterbegin", HTML);
+                                <button class="button-pushable" role="button">
+                                    <span class="button-shadow"></span>
+                                    <span class="button-edge"></span>
+                                    <span class="button-front btn-delete">
+                                    Delete
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                `
+                newLineList.insertAdjacentHTML("afterbegin", HTML);  
+            }
+        } 
     }
+
+
+    // newLineList.innerHTML = "";
+
+    // for(let i of acc.list)
+    // {
+    //     let HTML = 
+    //     `
+    //     <tr>
+    //         <td>
+    //             <div class="list">
+    //                 <input type="input" class="text-edit hidden" value="${i}" name="text" required />
+    //                 <p class="list-text">${i}</p>
+    //                 <div class="btns-list hidden">
+    //                     <button class="button-pushable" role="button">
+    //                         <span class="button-shadow"></span>
+    //                         <span class="button-edge"></span>
+    //                         <span class="button-front btn-edit">
+    //                         Edit
+    //                         </span>
+    //                     </button>
+
+    //                     <button class="button-pushable" role="button">
+    //                         <span class="button-shadow"></span>
+    //                         <span class="button-edge"></span>
+    //                         <span class="button-front btn-delete">
+    //                         Delete
+    //                         </span>
+    //                     </button>
+    //                 </div>
+    //             </div>
+    //         </td>
+    //     </tr>
+    //     `
+    //     newLineList.insertAdjacentHTML("afterbegin", HTML);
+    // }
 }
 
 
@@ -311,6 +359,7 @@ newLineList.addEventListener("click", function(e)
 
 let categoryContent = document.querySelector(".category-content");
 let wrap = document.querySelectorAll(".wrap");
+// let category;
 
 categoryContent.addEventListener("click", function(e)
 {
@@ -324,4 +373,15 @@ categoryContent.addEventListener("click", function(e)
     }
 
     btn.classList.add("wrap-active");
+
+    for(let i of wrap)
+    {
+        if(i.classList.value == "wrap wrap-active")
+        {
+           let category = i.id;
+
+           displayList(currentAcount, category);
+        }
+    }
+
 })
