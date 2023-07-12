@@ -314,8 +314,6 @@ categoryContent.addEventListener("click", function(e)
 {
     let btn = e.target.closest(".wrap");
 
-    if(!btn) return;
-
     for(let i of wrap)
     {
         i.classList.remove("wrap-active");
