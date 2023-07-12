@@ -302,8 +302,7 @@ newLineList.addEventListener("click", function(e)
 {
     e.preventDefault();
 
-    let btnDelete = e.target.closest(".btn-delete");
-    let task = btnDelete.parentElement.parentElement.previousElementSibling.textContent;
+    let task = e.target.closest(".btn-delete").parentElement.parentElement.previousElementSibling.textContent;
 
     for(let i of currentAcount.list)
     {
@@ -316,7 +315,6 @@ newLineList.addEventListener("click", function(e)
     }
 
     displayList(currentAcount);
-
 })
 
 // EDIT TASK FROM LIST
@@ -364,8 +362,6 @@ let wrap = document.querySelectorAll(".wrap");
 categoryContent.addEventListener("click", function(e)
 {
     let btn = e.target.closest(".wrap");
-
-    if(!btn) return;
 
     for(let i of wrap)
     {
