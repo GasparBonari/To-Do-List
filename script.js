@@ -145,7 +145,7 @@ btnSubmit.addEventListener("click", function(e)
         let newUsername = joinUsername.value;
         let newPassword = joinPassword.value;
 
-        let newAccount = {name: newName, lastname: newLastName, pin: newPassword, list: [], username: newUsername};
+        let newAccount = {name: newName, lastname: newLastName, pin: newPassword, important: [], work: [], ideas: [], username: newUsername};
 
         users.push(newAccount);
 
@@ -237,6 +237,32 @@ function displayList(acc, category)
 }
 
 
+// SELECT BUTTONS FROM CATEGORY LIST
+
+categoryContent.addEventListener("click", function(e)
+{
+    let btn = e.target.closest(".wrap");
+
+    for(let i of wrap)
+    {
+        i.classList.remove("wrap-active");
+    }
+
+    btn.classList.add("wrap-active");
+
+    for(let i of wrap)
+    {
+        if(i.classList.value == "wrap wrap-active")
+        {
+           category = i.id;
+
+           displayList(currentAcount, category);
+        }
+    }
+
+})
+
+
 // ADD NEW TASK TO THE LIST
 
 btnGo.addEventListener("click", function(e)
@@ -278,7 +304,7 @@ newLineList.addEventListener("click", function(e)
         }
     }
 
-    displayList(currentAcount);
+    displayList(currentAcount, category);
 })
 
 // EDIT TASK FROM LIST
@@ -314,30 +340,4 @@ newLineList.addEventListener("click", function(e)
     let btns = e.target.childNodes[5]
 
     btns.classList.toggle("hidden")
-})
-
-
-// SELECT BUTTONS FROM CATEGORY LIST
-
-categoryContent.addEventListener("click", function(e)
-{
-    let btn = e.target.closest(".wrap");
-
-    for(let i of wrap)
-    {
-        i.classList.remove("wrap-active");
-    }
-
-    btn.classList.add("wrap-active");
-
-    for(let i of wrap)
-    {
-        if(i.classList.value == "wrap wrap-active")
-        {
-           category = i.id;
-
-           displayList(currentAcount, category);
-        }
-    }
-
 })
