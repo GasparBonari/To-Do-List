@@ -260,6 +260,7 @@ categoryContent.addEventListener("click", function(e)
         }
     }
 
+    inputTask.value = "";
 })
 
 
@@ -280,6 +281,8 @@ btnGo.addEventListener("click", function(e)
                 displayList(currentAcount, category);
 
                 k.length > 7 ? document.body.style.overflow = "auto" : false;
+
+                inputTask.value = "";
             }
         }
     }
@@ -312,6 +315,7 @@ newLineList.addEventListener("click", function(e)
 
     displayList(currentAcount, category);
 })
+
 
 // EDIT TASK FROM LIST
 
