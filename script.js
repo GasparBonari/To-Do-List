@@ -200,15 +200,15 @@ function displayList(acc, category)
     {
         if(i == category)
         {
-            for(let i of k)
+            for(let r of k)
             {
                 let HTML = 
                 `
                 <tr>
                     <td>
                         <div class="list">
-                            <input type="input" class="text-edit hidden" value="${i}" name="text" required />
-                            <p class="list-text">${i}</p>
+                            <input type="input" class="text-edit hidden" value="${r}" name="text" required />
+                            <p class="list-text">${r}</p>
                             <div class="btns-list hidden">
                                 <button class="button-pushable" role="button">
                                     <span class="button-shadow"></span>
@@ -294,13 +294,19 @@ newLineList.addEventListener("click", function(e)
 
     let task = e.target.closest(".btn-delete").parentElement.parentElement.previousElementSibling.textContent;
 
-    for(let i of currentAcount.list)
+    for(let [i, k] of Object.entries(currentAcount))
     {
-        if(task == i)
+        if(i == category)
         {
-            let index = currentAcount.list.indexOf(i);
-            
-            currentAcount.list.splice(index, 1);
+            for(let r of k)
+            {
+                if(task == r)
+                {
+                    let index = k.indexOf(r);
+                    
+                    k.splice(index, 1);
+                }
+            }
         }
     }
 
