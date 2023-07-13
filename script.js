@@ -36,6 +36,7 @@ let user3 =
 
 let users = [user1, user2, user3];
 let currentAcount;
+let category = "important";
 
 const usernameInput = document.querySelector(".username-input");
 const passwordInput = document.querySelector(".password-input");
@@ -50,6 +51,8 @@ const joinName = document.querySelector(".join-name");
 const joinLastName = document.querySelector(".join-last-name");
 const joinUsername = document.querySelector(".join-username");
 const joinPassword = document.querySelector(".join-password");
+const categoryContent = document.querySelector(".category-content");
+const wrap = document.querySelectorAll(".wrap");
 
 const btnLogIn = document.querySelector(".log-in-button");
 const btnJoin = document.querySelector(".btn-join-us");
@@ -231,42 +234,6 @@ function displayList(acc, category)
             }
         } 
     }
-
-
-    // newLineList.innerHTML = "";
-
-    // for(let i of acc.list)
-    // {
-    //     let HTML = 
-    //     `
-    //     <tr>
-    //         <td>
-    //             <div class="list">
-    //                 <input type="input" class="text-edit hidden" value="${i}" name="text" required />
-    //                 <p class="list-text">${i}</p>
-    //                 <div class="btns-list hidden">
-    //                     <button class="button-pushable" role="button">
-    //                         <span class="button-shadow"></span>
-    //                         <span class="button-edge"></span>
-    //                         <span class="button-front btn-edit">
-    //                         Edit
-    //                         </span>
-    //                     </button>
-
-    //                     <button class="button-pushable" role="button">
-    //                         <span class="button-shadow"></span>
-    //                         <span class="button-edge"></span>
-    //                         <span class="button-front btn-delete">
-    //                         Delete
-    //                         </span>
-    //                     </button>
-    //                 </div>
-    //             </div>
-    //         </td>
-    //     </tr>
-    //     `
-    //     newLineList.insertAdjacentHTML("afterbegin", HTML);
-    // }
 }
 
 
@@ -280,18 +247,15 @@ btnGo.addEventListener("click", function(e)
     {
         for(let [i, k] of Object.entries(currentAcount))
         {
-            if(i == "list")
+            if(i == category)
             {
                 k.push(inputTask.value);
                 
-                displayList(currentAcount);
+                displayList(currentAcount, category);
+
+                k.length > 7 ? document.body.style.overflow = "auto" : false;
             }
         }
-    }
-
-    if(currentAcount.list.length == 7)
-    {
-        document.body.style.overflow = "auto";
     }
 })
 
@@ -355,10 +319,6 @@ newLineList.addEventListener("click", function(e)
 
 // SELECT BUTTONS FROM CATEGORY LIST
 
-let categoryContent = document.querySelector(".category-content");
-let wrap = document.querySelectorAll(".wrap");
-// let category;
-
 categoryContent.addEventListener("click", function(e)
 {
     let btn = e.target.closest(".wrap");
@@ -374,7 +334,7 @@ categoryContent.addEventListener("click", function(e)
     {
         if(i.classList.value == "wrap wrap-active")
         {
-           let category = i.id;
+           category = i.id;
 
            displayList(currentAcount, category);
         }
