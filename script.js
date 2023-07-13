@@ -322,17 +322,29 @@ newLineList.addEventListener("click", function(e)
     let btnEdit = e.target.closest(".btn-edit");
     let inputEdit = btnEdit.parentElement.parentElement.previousElementSibling.previousElementSibling;
     let taskListText = btnEdit.parentElement.parentElement.previousElementSibling;
-    let index = currentAcount.list.indexOf(taskListText.textContent);
+    let index;
 
     inputEdit.classList.toggle("hidden");
 
     inputEdit.classList.contains("hidden") ? taskListText.style.opacity = 100 : taskListText.style.opacity = 0;
 
+
+    for(let [i, k] of Object.entries(currentAcount))
+    {
+        if(i == category)
+        {
+            index = k.indexOf(taskListText.textContent);
+        }
+    }
+
     taskListText.innerHTML = inputEdit.value;
 
-    if(index !== -1)
+    for(let [i, k] of Object.entries(currentAcount))
     {
-        currentAcount.list[index] = taskListText.textContent;
+        if(i == category)
+        {
+            k[index] = taskListText.textContent;
+        }
     }
 })
 
