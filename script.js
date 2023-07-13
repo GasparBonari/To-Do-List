@@ -355,7 +355,14 @@ newLineList.addEventListener("click", function(e)
 {
     e.preventDefault();
 
-    let btns = e.target.childNodes[5]
+    let btns = e.target.childNodes[5];
 
-    btns.classList.toggle("hidden")
+    let text = e.target.childNodes[1]
+
+    console.log(text.classList.contains("hidden"));
+
+    if(text.classList.contains("hidden"))
+    {
+        btns.classList.toggle("hidden");
+    }
 })
